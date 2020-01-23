@@ -22,8 +22,8 @@ objects:
     tags:
     - from:
         kind: DockerImage
-        name: gitlab/gitlab-ce:11.3.6-ce.0
-      name: gitlab-11.3.6
+        name: gitlab/gitlab-ce:12.4.8-ce.0
+      name: gitlab-12.4.8
 - apiVersion: v1
   kind: ImageStream
   metadata:
@@ -34,8 +34,8 @@ objects:
     tags:
     - from:
         kind: DockerImage
-        name: gitlab/gitlab-runner:v11.3.1
-      name: gitlab-runner-v11.3.1
+        name: gitlab/gitlab-runner:v12.7.0
+      name: gitlab-runner-v12.7.0
 - apiVersion: v1
   kind: ImageStream
   metadata:
@@ -155,7 +155,7 @@ objects:
         - gitlab-ce
         from:
           kind: ImageStreamTag
-          name: ${APPLICATION_NAME}:gitlab-11.3.6
+          name: ${APPLICATION_NAME}:gitlab-12.4.8
       type: ImageChange
 - apiVersion: v1
   kind: DeploymentConfig
@@ -243,7 +243,7 @@ objects:
         - gitlab-runner
         from:
           kind: ImageStreamTag
-          name: ${APPLICATION_NAME}-runner:gitlab-runner-v11.3.1
+          name: ${APPLICATION_NAME}-runner:gitlab-runner-v12.7.0
       type: ImageChange
 - apiVersion: v1
   kind: DeploymentConfig
@@ -404,7 +404,7 @@ objects:
         - gitlab-ce-postgresql
         from:
           kind: ImageStreamTag
-          name: postgresql:9.6
+          name: postgresql:10
           namespace: openshift
       type: ImageChange
 - apiVersion: v1
